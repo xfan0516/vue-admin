@@ -1,0 +1,275 @@
+@import './reset.scss';
+@import './theme.scss';
+@import './element-ui.scss';
+
+#app {
+  height: 100%;
+}
+
+.el-breadcrumb {
+  line-height: inherit;
+
+  span,
+  a {
+    color: #ccc !important;
+  }
+  
+  a:hover {
+    color: #fff !important;
+  }
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: left;
+
+  .el-form {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .el-form-item {
+    margin-bottom: 10px;
+  }
+
+  .el-input__inner {
+    padding: 0 12px;
+  }
+
+  .btn-x .el-button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+}
+
+.vmain-table {
+  height: inherit;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+
+  .el-table__body-wrapper {
+    overflow-y: auto;
+  }
+
+  .el-table th {
+    background: #fafafa;
+  }
+  
+  .el-table .cell {
+    text-overflow: inherit;
+  }
+  
+  .el-button {
+    margin: 5px;
+  }
+}
+
+.p-virtualCode {
+  text-align: center;
+}
+
+.p-virtualCode + .p-virtualCode {
+  padding: 0 10px;
+  margin: 0 -10px;
+  border-top: 1px solid #ddd;
+}
+
+.el-table {
+  .el-input {
+    width: 100%;
+  }
+}
+
+// 表单
+.v-form {
+  padding-top: 50px;
+  text-align: left;
+
+  .el-col-12 {
+    min-width: 830px;
+  }
+
+  h3 {
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .flex {
+    display: flex;
+
+    .el-form-item + .el-form-item {
+      margin-left: 20px;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.save-table {
+  .save-table-header {
+    padding: 10px;
+  }
+}
+
+.main-header-tabs {
+  padding: 10px;
+  text-align: left;
+}
+
+.selectStyle .el-select {
+  width: 120px;
+}
+
+.w120 .el-select, .w120 .el-input {
+  width: 120px;
+}
+
+.start-end-num {
+  font-size: 0;
+
+  .el-input {
+    width: 100px;
+  }
+}
+
+.modal-form {
+  text-align: left;
+}
+
+.main-side {
+  position: relative;
+  padding-left: 270px;
+  text-align: left;
+
+  .menutit {
+    position: absolute;
+    top: -10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    padding: 0 24px;
+    margin-bottom: 0;
+    line-height: 40px;
+    color: #fff;
+    background: #20c4cc;
+    border-top-left-radius: 5px;
+  }
+
+  .main-l {
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 5px;
+    box-sizing: border-box;
+    width: 270px;
+    padding-top: 30px;
+    background: #fafafa;
+    border-top: 10px solid #fff;
+    border-top-left-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .el-tree {
+    background: #eee;
+  }
+
+  .el-tree-node__expand-icon {
+    color: #20c4cc;
+  }
+}
+
+.w200 {
+  width: 200px !important;
+}
+
+.w375 {
+  width: 375px !important;
+}
+
+.w640 {
+  width: 640px !important;
+}
+
+.w300 {
+  width: 300px !important;
+}
+
+.wh24 {
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  padding: 0 !important;
+  font-weight: 600;
+  color: #ccc;
+}
+
+.el-tooltip__popper.is-light {
+  border: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-tree {
+  max-width: 400px;
+  min-height: 400px;
+  background: #eee;
+}
+
+#editor2, #editor1 {
+  position: relative;
+  z-index: 90;
+}
+
+.v-menu:hover .vel-menu {
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 1px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 10px;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.i-theme {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 9px;
+}
