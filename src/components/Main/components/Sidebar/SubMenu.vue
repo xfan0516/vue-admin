@@ -13,9 +13,9 @@
     <div slot="title">
       <!-- <i :class="'el-icon-s-' + item.icon" /> -->
       <i v-if="!level" :class="item.icon" />
-      <span slot="title">{{ item.name }}</span>
+      <span>{{ item.name }}</span>
     </div>
-    <template v-if="item.children && item.children.length">
+    <template v-if="item.children.length">
       <submenu
         v-for="items in item.children"
         :key="items.id"
@@ -51,7 +51,7 @@ export default {
       if (this.$route.path !== `${item.url}`) {
         this.$router.push(`${item.url}`)
       } else {
-        this.app.reLoad()
+        // this.app.reLoad()
         // this.$router.push(`/${item.url}`)
       }
       console.log(item.url, this.$route.path, item.id)

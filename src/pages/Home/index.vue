@@ -1,21 +1,20 @@
 <template>
-  <div class="testPage">
+  <div class="home">
     <h1>{{ msg }}</h1>
   </div>
 </template>
-
 <script>
 export default {
-  name: '',
+  name: 'home',
   data () {
     return {
-      msg: '这是 组件'
+      msg: '这是 home 组件'
     }
   }
 }
 </script>
 <style lang="scss">
-.testPage {
+.home {
   height: inherit;
 }
 </style>

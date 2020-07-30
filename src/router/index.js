@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Main from '@/components/Main/index.vue'
 Vue.use(VueRouter)
 
@@ -15,7 +14,24 @@ Vue.use(VueRouter)
     component: Main,
     meta: { title: '首页' },
     children: [
-      
+      {
+        path: '/home',
+        component: () => import('@/pages/Home/index.vue'),
+        meta: {
+          rating: 0,
+          parent: '/home',
+          title: '首页'
+        }
+      },
+      // {
+      //   path: '/changePwd',
+      //   component: () => import('@/pages/user/changePwd'),
+      //   meta: {
+      //     rating: 0,
+      //     parent: '/changePwd',
+      //     title: '修改密码'
+      //   }
+      // },
     ]
   },
   {

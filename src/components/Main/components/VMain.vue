@@ -1,7 +1,7 @@
 <template>
   <div class="v-main">
     <transition name="fade-transform" mode="out-in">
-      <router-view v-if="!app.reLoadCom" />
+      <router-view />
     </transition>
   </div>
 </template>
@@ -22,13 +22,30 @@ export default {
   position: relative;
   box-sizing: border-box;
   height: calc(100vh - 60px);
-  padding: 40px 0 10px;
+  padding: 0 0 10px;
   overflow-x: hidden;
   overflow-y: auto;
 
   & > div {
     height: 100%;
-    overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 1px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #eee;
+      border-radius: 10px;
+      box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+    }
   }
 
   & > .v-form-page {

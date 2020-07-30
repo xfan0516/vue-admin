@@ -3,7 +3,7 @@
     <v-header />
     <div class="layout-bottom">
       <sidebar />
-      <div class="main">
+      <div class="main" :style="{paddingLeft: !app.isCollapse ? '220px' : '64px'}">
         <tags-view />
         <v-main />
       </div>
@@ -50,7 +50,8 @@ export default {
     VHeader,
     VMain,
     TagsView
-  }
+  },
+  inject: ['app']
 }
 </script>
 <style lang="scss">
