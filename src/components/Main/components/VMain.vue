@@ -21,7 +21,7 @@ export default {
 .v-main {
   position: relative;
   box-sizing: border-box;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 100px);
   padding: 0 0 10px;
   overflow-x: hidden;
   overflow-y: auto;

@@ -10,12 +10,15 @@ Vue.use(VueRouter)
   //   component: Home
   // },
   {
-    path: '/',
+    path: '/admin',
     component: Main,
     meta: { title: '首页' },
+    redirect: () => {
+      return '/admin/home'
+    },
     children: [
       {
-        path: '/home',
+        path: '/admin/home',
         component: () => import('@/pages/Home/index.vue'),
         meta: {
           rating: 0,
@@ -45,7 +48,7 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

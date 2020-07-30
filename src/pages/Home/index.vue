@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>{{ msg }}</h1>
+    <h4 v-for="item in 40" :key="item">{{ msg + item }}</h4>
   </div>
 </template>
 <script>

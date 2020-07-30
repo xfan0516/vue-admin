@@ -77,7 +77,7 @@ export default {
         path: tag.path
       })
     },
-    handleTabsEdit (tab, event) {
+    handleTabsEdit () {
       const { path } = this.$route
       if (this.currTag !== path) {
         const currfullPath = this.app.tags.filter(item => item.path === this.currTag)[0]
@@ -89,7 +89,7 @@ export default {
 </script>
 <style lang="scss">
 .TagsView {
-  width: 99%;
+  width: 100%;
   margin: 0 auto;
   height: 36px;
   padding-top: 4px;

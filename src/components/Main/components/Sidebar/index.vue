@@ -12,7 +12,12 @@
         @open="handleOpen"
         @close="handleClose"
       >
-        <sub-menu v-for="item in menus" :key="item.id" :item="item" />
+        <sub-menu
+          v-for="(item) in menus"
+          :key="item.id"
+          :item="item"
+          :level="0"
+        />
       </el-menu>
     </div>
   </div>
@@ -26,157 +31,33 @@ const menus = {
       'icon': 'el-icon-s-home',
       'id': '001',
       'name': '首页',
-      'available': true,
-      'url': '/home',
-      'children': []
+      'url': '/admin/home',
     },
     {
-      'url': '/mkt:activity',
+      'url': '/UI',
       'icon': 'el-icon-s-tools',
       'id': '521',
-      'name': '系统设置',
-      'available': true,
+      'name': 'UI',
       'children': [
         {
           'icon': '',
           'id': '522',
-          'name': '资源管理',
-          'url': '/resourceList',
-          'children': []
-        },
-        {
-          'icon': '',
-          'id': '523',
-          'name': '角色管理',
-          'url': '/roleList',
-          'children': []
+          'name': '按钮',
+          'url': '/admin/ui/button',
         }
+        
       ]
     },
     {
-      'url': '/mkt:activity',
+      'url': '/form',
       'icon': 'el-icon-s-custom',
       'id': '311',
-      'name': '用户体系',
-      'available': true,
+      'name': '表单',
       'children': [
-        {
-          'icon': '',
-          'id': '312',
-          'name': '角色组设置',
-          'url': '/roleGroup',
-          'children': []
-        },
-        {
-          'icon': '',
-          'id': '313',
-          'name': '组织机构',
-          'url': '/organizationList',
-          'children': []
-        },
-        {
-          'icon': '',
-          'id': '314',
-          'name': '用户管理',
-          'url': '/userList',
-          'children': []
-        }
-      ]
-    },
-    {
-      'url': '/mkt:activity',
-      'icon': 'el-icon-s-shop',
-      'id': '321',
-      'name': '商城管理',
-      'available': true,
-      'children': [
-        {
-          'icon': '',
-          'id': '322',
-          'name': '商城管理',
-          'url': '/siteList',
-          'children': []
-        },
-        {
-          'icon': '',
-          'id': '323',
-          'name': '供应商管理',
-          'url': '/mallSupplyer',
-          'children': []
-        }
-      ]
-    },
-    {
-      'url': '/mkt:activity',
-      'icon': 'el-icon-s-data',
-      'id': '621',
-      'name': '预算管理',
-      'available': true,
-      'children': [
-        {
-          'icon': '',
-          'id': '622',
-          'name': '机构资金',
-          'url': '/orgAccountList',
-          'children': []
-        }
-      ]
-    },
-    {
-      'url': '/mkt:activity',
-      'icon': 'el-icon-s-order',
-      'id': '721',
-      'name': '订单管理',
-      'available': true,
-      'children': [
-        {
-          'icon': '',
-          'id': '722',
-          'name': '订单查询',
-          'url': '/orgJfList',
-          'children': []
-        }
+       
       ]
     }
-    /* {
-      'url': '/mkt:activity',
-      'icon': 'el-icon-s-goods',
-      'id': '331',
-      'name': '商品池管理',
-      'available': true,
-      'children': [
-        {
-          'icon': '',
-          'id': '332',
-          'name': '电商平台',
-          'url': '/productList'
-        },
-        {
-          'icon': '',
-          'id': '333',
-          'name': '自有商品挑选（手动）',
-          'url': '/productList'
-        },
-        {
-          'icon': '',
-          'id': '334',
-          'name': '自有商品挑选（自动）',
-          'url': '/productList'
-        },
-        {
-          'icon': '',
-          'id': '335',
-          'name': '上架的商品',
-          'url': '/upProduct'
-        },
-        {
-          'icon': '',
-          'id': '336',
-          'name': '下架的商品',
-          'url': '/downProduct'
-        }
-      ]
-    } */
+    
   ]
 }
 console.log()
@@ -192,7 +73,7 @@ export default {
   },
   created () {
     this.menus = menus['login'] // loginType : loginSite login
-    this.currActive = this.$sStorage.get('currActive') ? this.$sStorage.get('currActive') : ''
+    // this.currActive = this.$sStorage.get('currActive') ? this.$sStorage.get('currActive') : ''
   },
   watch: {
     $route (newV) {
