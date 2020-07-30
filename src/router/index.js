@@ -26,6 +26,15 @@ Vue.use(VueRouter)
           title: '首页'
         }
       },
+      {
+        path: '/admin/ui/button',
+        component: () => import('@/pages/ui/Buttons.vue'),
+        meta: {
+          rating: 0,
+          parent: '/ui',
+          title: '按钮'
+        }
+      },
       // {
       //   path: '/changePwd',
       //   component: () => import('@/pages/user/changePwd'),

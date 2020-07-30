@@ -90,7 +90,7 @@ export default {
     },
     findCurrMenu (arrs, obj) {
       arrs.forEach((items) => {
-        if (items.children.length) {
+        if (items.children && items.children.length) {
           this.findCurrMenu(items.children, obj)
         } else {
           if (items.url === obj.path || items.url === obj.meta.parent) {

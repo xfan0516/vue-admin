@@ -4,11 +4,15 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
   data () {
     return {
       isCollapse: false
     }
+  },
+  created () {
+    console.log(this.$store)
   },
   methods: {
     menuSwitch () {
@@ -19,6 +23,11 @@ export default {
     return {
       app: this
     }
+  },
+  computed: {
+    ...mapState({
+      tags: state => state.tagsView.tags
+    })
   }
 }
 </script>

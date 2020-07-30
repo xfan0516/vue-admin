@@ -18,6 +18,7 @@ const mutations = {
     if (title && !currRoute) {
       state.tags.push(value)
     }
+    console.log(state.tags)
   },
   closeTags: (state, payload) => {
     const tags = state.tags.filter(item => item.path !== payload.path)
