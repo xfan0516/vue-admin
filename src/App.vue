@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 <script>
@@ -8,7 +8,8 @@ import { mapState } from 'vuex'
 export default {
   data () {
     return {
-      isCollapse: false
+      isCollapse: false,
+      onReLoad: true
     }
   },
   created () {
@@ -17,6 +18,14 @@ export default {
   methods: {
     menuSwitch () {
       this.isCollapse = !this.isCollapse
+    },
+    reLoad () {
+      this.onReLoad = false
+      setTimeout(() => {
+          this.onReLoad = true
+      }, 10)
+      // this.$nextTick(() => {
+      // })
     }
   },
   provide () {

@@ -67,13 +67,13 @@ export default {
     return {
       msg: '这是Sidebar组件',
       menus: [],
-      currActive: '001',
+      currActive: '522',
       openeds: []
     }
   },
   created () {
     this.menus = menus['login'] // loginType : loginSite login
-    // this.currActive = this.$sStorage.get('currActive') ? this.$sStorage.get('currActive') : ''
+    this.currActive = this.$sStorage.get('currActive') ? this.$sStorage.get('currActive') : ''
   },
   watch: {
     $route (newV) {

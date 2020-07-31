@@ -89,6 +89,8 @@ export default {
 </script>
 <style lang="scss">
 .TagsView {
+  position: relative;
+  z-index: 2;
   width: 100%;
   margin: 0 auto;
   height: 36px;

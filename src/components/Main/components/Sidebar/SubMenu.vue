@@ -44,11 +44,13 @@ export default {
   },
   methods: {
     link (item) {
+      console.log(item.url, this.$route.path, item.id)
+      
       if (this.$route.path !== `${item.url}`) {
         this.$router.push(`${item.url}`)
       } else {
-        // this.app.reLoad()
-        // this.$router.push(`/${item.url}`)
+        this.app.reLoad()
+        // this.$router.push(`${item.url}`)
       }
       console.log(item.url, this.$route.path, item.id)
     }
