@@ -38,11 +38,11 @@ module.exports = {
     host: '0.0.0.0',
     port: 8008,
     proxy: {
-      '/a': {
+      '/api': {
         // target: 'http://192.168.20.161:8086/',
         // target: 'http://172.16.1.215:30020/',
         // target: 'http://172.16.1.215:30020/', // 测试环境ip
-        target: 'http://172.16.1.215:30023/', // 测试环境ip
+        target: 'https://mock.yonyoucloud.com/mock/13655/', // 测试环境ip
         changeOrigin: true
       }
     }

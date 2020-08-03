@@ -11,7 +11,7 @@
         <span class="el-dropdown-link">
           <!-- <el-avatar size="small" :src="user.photoUrl" /> -->
           <span class="username">
-            {{ user.mySite ? user.mySite.siteName : user.name || user.companyName }}
+            {{ user.mySite ? user.mySite.siteName : user.name || '小菜儿' }}
           </span>
           <i class="el-icon-arrow-down el-icon--right" />
         </span>

@@ -28,32 +28,38 @@ import SubMenu from './SubMenu.vue'
 const menus = {
   login: [
     {
-      'icon': 'el-icon-s-home',
-      'id': '001',
-      'name': '首页',
-      'url': '/admin/home',
+      "icon": "el-icon-s-home",
+      "id": "001",
+      "name": "首页",
+      "url": "/admin/home",
     },
     {
-      'url': '/UI',
-      'icon': 'el-icon-s-tools',
-      'id': '521',
-      'name': 'UI',
-      'children': [
+      "url": "/UI",
+      "icon": "el-icon-s-tools",
+      "id": "521",
+      "name": "UI",
+      "children": [
         {
-          'icon': '',
-          'id': '522',
-          'name': '按钮',
-          'url': '/admin/ui/button',
+          "icon": "",
+          "id": "522",
+          "name": "按钮",
+          "url": "/admin/ui/button",
+        },
+        {
+          "icon": "",
+          "id": "523",
+          "name": "弹框组件",
+          "url": "/admin/ui/modals",
         }
         
       ]
     },
     {
-      'url': '/form',
-      'icon': 'el-icon-s-custom',
-      'id': '311',
-      'name': '表单',
-      'children': [
+      "url": "/form",
+      "icon": "el-icon-s-custom",
+      "id": "311",
+      "name": "表单",
+      "children": [
        
       ]
     }
@@ -72,6 +78,7 @@ export default {
     }
   },
   created () {
+    this.init()
     this.menus = menus['login'] // loginType : loginSite login
     this.currActive = this.$sStorage.get('currActive') ? this.$sStorage.get('currActive') : ''
   },
@@ -81,6 +88,13 @@ export default {
     }
   },
   methods: {
+    init () {
+      this.$api.getMenu({
+        id: 1
+      }).then((res) => {
+        console.log(res)
+      })
+    },
     handleOpen (key, keyPath) {
       this.openeds.push(key)
       console.log('handleOpen', key, keyPath)

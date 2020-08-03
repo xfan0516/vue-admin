@@ -65,15 +65,6 @@ export default {
 }
 </script>
 <style lang="scss">
-.box-card {
-  text-align: left;
-  margin-bottom: 10px;
-
-  .el-button-group {
-    margin-right: 20px;
-  }
-}
-
 .buttons {
   height: inherit;
 

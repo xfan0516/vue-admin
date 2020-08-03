@@ -2,7 +2,7 @@ import axios from 'axios'
 import router from '@/router'
 import { Message, Loading } from 'element-ui'
 // var baseUrl = '/backend_api'
-var baseUrl = '/backend_api'
+var baseUrl = '/api'
 const http = axios.create({
   baseURL: baseUrl,
   timeout: 10000 * 30,
@@ -27,7 +27,7 @@ http.interceptors.request.use(config => {
  * @param {*} params 参数对象
  * @param {*} openDefultParams 是否开启默认参数?
  */
-http.adornParams = (params = {}, openDefultParams = true) => {
+http.adornParams = (params = {}) => {
   // var defaults = {
   //   't': new Date().getTime()
   // }
@@ -130,50 +130,7 @@ function get (url, data = {}, paramsForm = false) {
   })
 }
 
-function exportExcel (url, data, paramsForm = 'data', loading = true) {
-  let loadingFlag = null
-  if (loading) {
-    loadingFlag = Loading.service({ fullscreen: true })
-  }
-  const obj = {
-    url: url,
-    method: 'post'
-  }
-  obj[paramsForm] = http.adornData(data, true)
-  obj.responseType = 'blob'
-  return http(obj).then(res => {
-    return new Promise((resolve, reject) => {
-      resolve(res)
-    })
-  }).finally(() => {
-    setTimeout(() => {
-      loading && loadingFlag.close()
-    }, 200)
-  })
-}
-
-function getExportExcel (url, data = {}) {
-  let loadingFlag = Loading.service({ fullscreen: true })
-  return http({
-    url: url,
-    method: 'get',
-    params: http.adornParams(data),
-    responseType: 'blob'
-  }).then(res => {
-    return new Promise((resolve, reject) => {
-      loadingFlag.close()
-      resolve(res.data)
-      // if (res && res.data.success) {
-      // } else {
-      //   reject(res)
-      //   Message({ type: 'error', message: res.data.msg })
-      // }
-    })
-  })
-}
 export {
   get,
-  post,
-  exportExcel,
-  getExportExcel
+  post
 }

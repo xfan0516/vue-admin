@@ -35,6 +35,15 @@ Vue.use(VueRouter)
           title: '按钮'
         }
       },
+      {
+        path: '/admin/ui/modals',
+        component: () => import('@/pages/ui/Modals.vue'),
+        meta: {
+          rating: 0,
+          parent: '/ui',
+          title: '弹框'
+        }
+      },
       // {
       //   path: '/changePwd',
       //   component: () => import('@/pages/user/changePwd'),
