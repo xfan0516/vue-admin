@@ -4,7 +4,7 @@
       <el-button type="primary" @click="open1">信息提示</el-button>
       <el-button type="primary" @click="open2">确认消息</el-button>
     </el-card>
-    <el-card class="box-card" header="Message 消息提示框">
+    <el-card class="box-card" header="全局Message 消息提示框">
       <el-button  @click="message1">消息</el-button>
       <el-button type="success" @click="message2">成功</el-button>
       <el-button type="warning" @click="message3">警告</el-button>
@@ -109,26 +109,22 @@ export default {
       });
     },
     message1() {
-      this.$message('这是一条消息提示');
+      this.main.Message('这是一条消息提示', 'info')
+      // this.$message('这是一条消息提示');
     },
     message2() {
-      this.$message({
-        message: '恭喜你，这是一条成功消息',
-        type: 'success'
-      });
+      this.main.Message('恭喜你，这是一条成功消息', 'success')
     },
 
     message3() {
-      this.$message({
-        message: '警告哦，这是一条警告消息',
-        type: 'warning'
-      });
+      this.main.Message('警告哦，这是一条警告消息', 'warning')
     },
 
     message4() {
-      this.$message.error('错了哦，这是一条错误消息');
+      this.main.Message('错了哦，这是一条错误消息', 'error')
     }
-  }
+  },
+  inject: ['main']
 }
 </script>
 <style lang="scss">
