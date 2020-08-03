@@ -44,6 +44,15 @@ Vue.use(VueRouter)
           title: '弹框'
         }
       },
+      {
+        path: '/admin/Form',
+        component: () => import('@/pages/Form'),
+        meta: {
+          rating: 0,
+          parent: '/ui',
+          title: '表单'
+        }
+      },
       // {
       //   path: '/changePwd',
       //   component: () => import('@/pages/user/changePwd'),

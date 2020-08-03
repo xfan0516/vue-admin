@@ -34,7 +34,7 @@ const menus = {
       "url": "/admin/home",
     },
     {
-      "url": "/UI",
+      "url": "/基础UI组件",
       "icon": "el-icon-s-tools",
       "id": "521",
       "name": "UI",
@@ -55,13 +55,10 @@ const menus = {
       ]
     },
     {
-      "url": "/form",
+      "url": "/admin/form",
       "icon": "el-icon-s-custom",
       "id": "311",
-      "name": "表单",
-      "children": [
-       
-      ]
+      "name": "表单"
     }
     
   ]
